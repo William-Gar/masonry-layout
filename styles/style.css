@@ -1,0 +1,243 @@
+* {
+  scroll-behavior: smooth;
+}
+
+.body {
+  background-color: #f2f2f5;
+}
+
+/* Start Nav *********************************** */
+.nav {
+  background-color: #021b24;
+  height: 80px;
+  color: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 100;
+}
+
+.nav__container {
+  display: flex;
+  height: 100%;
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav__logo {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 1.7em;
+  letter-spacing: 1px;
+}
+
+.nav__menu {
+  display: grid;
+  grid-auto-flow: column;
+  gap: 3em;
+  margin-top: 10px;
+}
+
+.nav__item {
+  color: #fff;
+  text-decoration: none;
+  font-family: arial;
+  --clippy: polygon(0 0, 0 0, 0 100%, 0% 100%);
+}
+
+.nav__item::after {
+  content: "";
+  display: block;
+  background-color: #fff;
+  width: 100%;
+  margin-top: 3px;
+  height: 1px;
+  clip-path: var(--clippy);
+  transition: clip-path 0.5s;
+}
+
+.nav__item:hover {
+  --clippy: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.nav__input:checked + .nav__menu {
+  background-color: #222;
+}
+
+.nav__label,
+.nav__input {
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .nav__label {
+    display: block;
+    cursor: pointer;
+  }
+
+  .nav__menu {
+    position: fixed;
+    top: 70px;
+    bottom: -80px;
+    background-color: #222;
+    width: 100%;
+    left: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    clip-path: circle(0 at center);
+    transition: clip-path 0.5s ease-in-out;
+    z-index: 100;
+  }
+
+  .nav__item {
+    font-weight: bold;
+  }
+
+  .nav__input:checked + .nav__menu {
+    clip-path: circle(100% at center);
+  }
+}
+/* End Nav **************************** */
+
+/* Start Gallery ******************************* */
+.gallery {
+  width: 90%;
+  margin-top: 7em;
+  margin-bottom: 5em;
+  margin-left: auto;
+  margin-right: auto;
+  columns: 5 320px;
+  column-gap: 0.7em;
+}
+
+.gallery__image {
+  max-width: 100%;
+  margin-bottom: 0.7em;
+  display: block;
+  border-radius: 7px;
+  border: 0.5px solid #aaa;
+}
+
+.gallery__image:hover {
+  cursor: pointer;
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+/* End Gallery ************************ */
+
+/* Start Botton Up ***************************** */
+.button-up {
+  position: fixed;
+  bottom: 70px;
+  right: 5px;
+  display: none;
+}
+
+.button-up--status {
+  display: block;
+}
+
+@media (max-width: 700px) {
+  .button-up {
+    right: 1px;
+    bottom: 85px;
+    outline: none;
+  }
+}
+/* End Button Up ********************** */
+
+/* Start Modal ********************************* */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  width: 100%;
+  height: 100vh;
+  z-index: 200;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* transition: all 0.6s ease; */
+  transform: scale(0);
+}
+
+.modal__img {
+  height: 90%;
+  width: 80%;
+  object-fit: contain;
+}
+
+.modal:target {
+  transform: scale(1);
+}
+
+.modal__close {
+  display: block;
+  position: absolute;
+  top: 30px;
+  right: 30px;
+}
+
+.modal__close:hover {
+  transform: rotate(10deg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.modal__next:hover {
+  transform: rotate(7deg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.modal__previous:hover {
+  transform: rotate(-7deg);
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+/* End Modal ************************** */
+
+/* Start Footer ******************************** */
+.footer {
+  background-color: #021b24;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 80px;
+}
+
+.footer__developer {
+  color: #fff;
+  font-family: arial;
+}
+
+.footer__link {
+  text-decoration: none;
+  color: #fff;
+  letter-spacing: 1px;
+  border-left: 1px solid #999;
+  padding-left: 7px;
+}
+
+.footer__link:hover {
+  color: #ddd;
+}
+
+.social__link {
+  margin-right: 10px;
+}
+
+@media (max-width: 700px) {
+  .footer {
+    flex-direction: column;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+  }
+}
+/* End Footer ************************* */
