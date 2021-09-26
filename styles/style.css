@@ -189,17 +189,11 @@
   cursor: pointer;
 }
 
+.modal__previous:hover,
 .modal__next:hover {
-  transform: rotate(7deg);
-  transition: all 0.3s ease;
   cursor: pointer;
 }
 
-.modal__previous:hover {
-  transform: rotate(-7deg);
-  transition: all 0.3s ease;
-  cursor: pointer;
-}
 /* End Modal ************************** */
 
 /* Start Footer ******************************** */
