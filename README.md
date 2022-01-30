@@ -1,0 +1,6 @@
+# masonry-layout
+Website with an image gallery in the Masonry Layout style. Developed with HTML, CSS and JavaScript.
+***
+***See the result in the following link:***
+https://gallery-ml.netlify.app/  👈
+***
